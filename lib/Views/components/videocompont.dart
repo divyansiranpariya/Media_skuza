@@ -17,7 +17,6 @@ class _VideoComponentState extends State<VideoComponent> {
   void initState() {
     // TODO: implement initState
     super.initState();
-
     loadvideo();
   }
 
@@ -82,7 +81,7 @@ class _VideoComponentState extends State<VideoComponent> {
                               child: Container(
                                 margin: EdgeInsets.only(left: 15),
                                 height: 120,
-                                color: Colors.blueGrey,
+                                color: Colors.white,
                                 child: isVideoLoaded &&
                                         allvideo
                                             .videoplay[i]['video'].isNotEmpty
@@ -117,7 +116,7 @@ class _VideoComponentState extends State<VideoComponent> {
                     },
                     separatorBuilder: (context, i) {
                       return Container(
-                        child: Text("hrlooe"),
+                        child: Text(""),
                       );
                     },
                     itemCount: allvideo.videoplay.length))),

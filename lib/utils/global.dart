@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 
 class images {
@@ -6,28 +7,31 @@ class images {
       'img':
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTByiBK-Ds3xjesz537JQleYozoO_WQuEIrPw&s",
       "title": "You & Me",
-      "artist": "Imagine Dragons",
+      "artist": "Jubin Nautiyal",
     },
     {
       'img':
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRptnSDNzRO_GZT7QetouOJIa7VKrIOEHG1AQ&s",
       "title": "Heart Beats",
-      "artist": "The Chainsmokers",
+      "artist": "Ankit Tiwari",
     },
     {
-      'img': "",
-      "title": "",
-      "artist": "",
+      'img':
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtZqH34Cg2WZjrlNNnVGw6lHE8U4IXJ5iL8gEaAxO9qZZERXRiSBDZ3FDK3dYDPQPt2o&usqp=CAU",
+      "title": "Feel Good",
+      "artist": "Tony Kakar",
     },
     {
-      'img': "",
-      "title": "",
-      "artist": "",
+      'img':
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNu4DY_TUjdbD30_jw5Cds54V_PF8mLUXRWPLD9T3tp-n05rQcVvLUv8tmP7S7ZFoOnBc&usqp=CAU",
+      "title": "Relax",
+      "artist": "Ayushman",
     },
     {
-      'img': "",
-      "title": "",
-      "artist": "",
+      'img':
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG4VN5DTB4187szybBYPD60Fz3MNPdfXcRyjrM2yVZiTolNnxDPpTGZUx6OFLifGhw2yw&usqp=CAU",
+      "title": "Energize",
+      "artist": "Neha kakar",
     },
   ];
   static List<Map<String, dynamic>> recent = [
@@ -69,27 +73,36 @@ class allaudio {
     {
       "audi": "assets/audio/Kudmayi - Film Version.mp3",
       "title": "Kudmayi",
+      "img":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8jimLbPAlUmFMf_z3wwWmzscJVgqSA9mCsw&s",
     },
     {
       "audi": "assets/audio/O Sajna - Badshah.mp3",
       "title": "O Sajna",
+      "img":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWTpn3XD-rgepGkLV6vNQB5ECcNwWs6t0Y0rU33VnZ_EmedfeplVxN_WsmMv3I8LZo7dY&usqp=CAU",
     },
     {
       "audi": "Sajani.mp3",
       "title": "Sajani",
+      "img":
+          "https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20240212145840.jpg",
     },
     {
-      "audi": "",
+      "audi": "Tum se.mp3",
       "title": "Tum Se",
+      "img":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwowMcNVB_BqOKUcjjOXhvIMYn7F4nsPT8FJDdsTj1FUvePDdRNGM-HXbPnWmT7D7_yIM&usqp=CAU",
     },
     {
-      "audi": "",
+      "audi": "Ve Kamleya - Arijit Singh.mp3",
       "title": " Ve Kamleya",
+      "img": "https://i.ytimg.com/vi/xXFbFUcic_0/default.jpg",
     },
-    {
-      "audi": "",
-      "title": "",
-    },
+  ];
+  static List<AssetsAudioPlayer> allau = [
+    AssetsAudioPlayer(),
+    AssetsAudioPlayer(),
   ];
 }
 
@@ -97,38 +110,33 @@ class allvideo {
   static List<Map<String, dynamic>> videoplay = [
     {
       'video': "assets/video/sample1.mp4",
-      'title': "Kudmai",
-      'description': "sdsjk'd;akkdkgakdka",
+      'title': "Zingi Tere Naam ",
+      'description':
+          "Contrary to popular belief, Lorem Ipsum is not simply random text",
     },
     {
       'video': "assets/video/sample2.mp4",
-      'title': "Ve Kamaleya",
-      'description': "ahgaisldl'akdkjagd ",
+      'title': "Ve Kamleya",
+      'description':
+          "At its most basic, a song is a short piece of music, usually with words. ",
     },
     {
       'video': "assets/video/sample3.mp4",
-      'title': " Sajana",
-      'description': " ",
+      'title': "O Sajana",
+      'description':
+          "The best way is to write about how the characters react and interpret what they hear.  ",
     },
     {
       'video': "assets/video/sample4.mp4",
-      'title': " ",
-      'description': " ",
+      'title': "Sang Rahiyo",
+      'description':
+          "you are really passionate about this song, I hear improvements, sometimes ",
     },
     {
       'video': "assets/video/sample1.mp4",
-      'title': " ",
-      'description': " ",
-    },
-    {
-      'video': "",
-      'title': " ",
-      'description': " ",
-    },
-    {
-      'video': "",
-      'title': " ",
-      'description': " ",
+      'title': "Kudmayi",
+      'description':
+          " At the heart of appreciating great music is the concept of active listening—becoming more attuned",
     },
   ];
 }

@@ -34,6 +34,9 @@ class _HomecomponentState extends State<Homecomponent> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   NeumorphicButton(
+                    onPressed: (){
+                      Navigator.of(context).pushNamed("SearchPage");
+                    },
                     child: Icon(
                       Icons.search_sharp,
                       color: Colors.white70,

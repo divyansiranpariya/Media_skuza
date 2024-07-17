@@ -152,8 +152,8 @@ class _detail_audioState extends State<detail_audio> {
                       height: 3,
                     ),
                     Text(
-                      "title",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      "Argit Singh",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
                     ),
                   ],
                 ),
