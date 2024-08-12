@@ -37,4 +37,4 @@ The Homepage widget is a stateful widget that contains a PageView for navigating
 ![mu1](https://github.com/user-attachments/assets/8e46e680-ea55-4097-a843-021fab780a0a)
 ![mu4](https://github.com/user-attachments/assets/ae30002a-7e69-4542-a0d5-9f489e7dabd8)
 ![mu2](https://github.com/user-attachments/assets/fe253c9a-fb14-4adc-82d8-e82b3f17ff9d)
->>>>>>> 72983def0c96df157fb225008c4d91cf1c95ac12
+
