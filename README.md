@@ -25,11 +25,8 @@ carousel_slider: ^4.1.1
 assets_audio_player: ^3.0.4
 
 # Usage
+The Homepage widget is a stateful widget that contains a PageView for navigating between different components. The button state is managed to reflect the currently selected page.
 
-<<<<<<< HEAD
-The Homepage widget is a stateful widget that contains a PageView for navigating between different components. The button state is managed to reflect the currently selected page.
-=======
-The Homepage widget is a stateful widget that contains a PageView for navigating between different components. The button state is managed to reflect the currently selected page.
 
 
 
