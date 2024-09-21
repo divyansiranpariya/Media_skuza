@@ -24,7 +24,7 @@ class _SplaceState extends State<Splace> {
       backgroundColor: Colors.black,
       body: Container(
         decoration: BoxDecoration(
-            color: Color(0xff282C31),
+            color: Colors.black,
             // color: Colors.white,
             image: DecorationImage(
               image: NetworkImage(

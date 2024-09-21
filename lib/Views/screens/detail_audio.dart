@@ -1,7 +1,7 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
+
 import 'package:media_skuza/utils/global.dart';
-import 'package:neumorphic_ui/neumorphic_ui.dart';
 
 class detail_audio extends StatefulWidget {
   const detail_audio({super.key});
@@ -65,30 +65,18 @@ class _detail_audioState extends State<detail_audio> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      NeumorphicButton(
+                      IconButton(
                         onPressed: () {},
-                        style: NeumorphicStyle(
-                            color: Colors.black38,
-                            shape: NeumorphicShape.convex,
-                            boxShape: NeumorphicBoxShape.circle(),
-                            oppositeShadowLightSource: true,
-                            depth: 1.3),
                         padding: const EdgeInsets.all(8.0),
-                        child: Icon(
+                        icon: Icon(
                           Icons.keyboard_arrow_down_sharp,
                           color: Colors.white70,
                         ),
                       ),
-                      NeumorphicButton(
+                      IconButton(
                         onPressed: () {},
-                        style: NeumorphicStyle(
-                            color: Colors.black38,
-                            shape: NeumorphicShape.convex,
-                            boxShape: NeumorphicBoxShape.circle(),
-                            oppositeShadowLightSource: true,
-                            depth: 1.3),
                         padding: const EdgeInsets.all(8.0),
-                        child: Icon(
+                        icon: Icon(
                           Icons.notifications_active_sharp,
                           color: Colors.white70,
                         ),
@@ -110,7 +98,6 @@ class _detail_audioState extends State<detail_audio> {
                           fit: BoxFit.cover,
                           image: AssetImage("assets/images/music3.avif"),
                         ),
-                        //color: Color(0xFF2F3034), // Same as the background color
                         shape: BoxShape.circle,
                         border: Border.all(color: Color(0xFF2F3034), width: 19),
                         boxShadow: [
@@ -180,8 +167,7 @@ class _detail_audioState extends State<detail_audio> {
                                           playing?.audio.duration;
                                       return Column(
                                         children: [
-                                          NeumorphicSlider(
-                                            height: 6,
+                                          Slider(
                                             value: (data == null)
                                                 ? 0
                                                 : data.inSeconds.toDouble(),
@@ -190,10 +176,6 @@ class _detail_audioState extends State<detail_audio> {
                                                 ? 0
                                                 : totalDuration.inSeconds
                                                     .toDouble(),
-                                            style: SliderStyle(
-                                              depth: 1,
-                                              accent: Color(0xff46ACE3),
-                                            ),
                                             onChanged: (value) {
                                               assetsAudioPlayer.seek(Duration(
                                                   seconds: value.toInt()));
@@ -230,52 +212,34 @@ class _detail_audioState extends State<detail_audio> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              NeumorphicButton(
+                              IconButton(
                                 onPressed: () async {
                                   playaudio(music['audi']);
                                   await assetsAudioPlayer.pause();
                                 },
-                                style: NeumorphicStyle(
-                                    lightSource: LightSource.bottomRight,
-                                    color: Colors.black26,
-                                    boxShape: NeumorphicBoxShape.circle(),
-                                    shape: NeumorphicShape.convex,
-                                    depth: 1.5),
                                 padding: const EdgeInsets.all(16.0),
-                                child: Icon(
+                                icon: Icon(
                                   Icons.pause,
                                   color: Colors.white70,
                                 ),
                               ),
-                              NeumorphicButton(
+                              IconButton(
                                 onPressed: () async {
                                   playaudio(music['audi']);
                                 },
-                                style: NeumorphicStyle(
-                                    shape: NeumorphicShape.convex,
-                                    lightSource: LightSource.bottomRight,
-                                    color: Color(0xff46ACE3),
-                                    boxShape: NeumorphicBoxShape.circle(),
-                                    depth: 1.5),
                                 padding: const EdgeInsets.all(16.0),
-                                child: Icon(
+                                icon: Icon(
                                   Icons.play_arrow,
                                   color: Colors.white70,
                                 ),
                               ),
-                              NeumorphicButton(
+                              IconButton(
                                 onPressed: () async {
                                   playaudio(music['audi']);
                                   await assetsAudioPlayer.stop();
                                 },
-                                style: NeumorphicStyle(
-                                    lightSource: LightSource.bottomRight,
-                                    color: Colors.black26,
-                                    shape: NeumorphicShape.convex,
-                                    boxShape: NeumorphicBoxShape.circle(),
-                                    depth: 1.5),
                                 padding: const EdgeInsets.all(16.0),
-                                child: Icon(
+                                icon: Icon(
                                   Icons.stop,
                                   color: Colors.white70,
                                 ),

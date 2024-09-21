@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:neumorphic_ui/neumorphic_ui.dart';
+
 import 'package:video_player/video_player.dart';
 import 'package:media_skuza/utils/global.dart';
 
@@ -37,30 +37,30 @@ class _VideoComponentState extends State<VideoComponent> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                NeumorphicButton(
+                IconButton(
                   onPressed: () {},
-                  style: NeumorphicStyle(
-                      color: Colors.black38,
-                      shape: NeumorphicShape.convex,
-                      boxShape: NeumorphicBoxShape.circle(),
-                      oppositeShadowLightSource: true,
-                      depth: 1.3),
+                  // style: NeumorphicStyle(
+                  //     color: Colors.black38,
+                  //     shape: NeumorphicShape.convex,
+                  //     boxShape: NeumorphicBoxShape.circle(),
+                  //     oppositeShadowLightSource: true,
+                  //     depth: 1.3),
                   padding: const EdgeInsets.all(8.0),
-                  child: Icon(
+                  icon: Icon(
                     Icons.arrow_back,
                     color: Colors.white70,
                   ),
                 ),
-                NeumorphicButton(
+                IconButton(
                   onPressed: () {},
-                  style: NeumorphicStyle(
-                      color: Colors.black38,
-                      shape: NeumorphicShape.convex,
-                      boxShape: NeumorphicBoxShape.circle(),
-                      oppositeShadowLightSource: true,
-                      depth: 1.3),
+                  // style: NeumorphicStyle(
+                  //     color: Colors.black38,
+                  //     shape: NeumorphicShape.convex,
+                  //     boxShape: NeumorphicBoxShape.circle(),
+                  //     oppositeShadowLightSource: true,
+                  //     depth: 1.3),
                   padding: const EdgeInsets.all(8.0),
-                  child: Icon(
+                  icon: Icon(
                     Icons.menu,
                     color: Colors.white70,
                   ),

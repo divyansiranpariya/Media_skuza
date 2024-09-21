@@ -11,13 +11,13 @@ void main() {
   runApp(MultiProvider(
     providers: [ChangeNotifierProvider(create: (context) => SliderProvider())],
     child: MaterialApp(
-      initialRoute: "Splace",
+      initialRoute: "Splace_screen",
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => Homepage(),
         'detail_audio': (context) => detail_audio(),
-        'Splace': (context) => Splace(),
-        'SearchPage': (context) => SearchPage(),
+        'Splace_screen': (context) => Splace(),
+        'Search_page': (context) => SearchPage(),
       },
     ),
   ));

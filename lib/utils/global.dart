@@ -73,36 +73,37 @@ class allaudio {
     {
       "audi": "assets/audio/Kudmayi - Film Version.mp3",
       "title": "Kudmayi",
+      "player": AssetsAudioPlayer(),
       "img":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8jimLbPAlUmFMf_z3wwWmzscJVgqSA9mCsw&s",
     },
     {
       "audi": "assets/audio/O Sajna - Badshah.mp3",
       "title": "O Sajna",
+      "player": AssetsAudioPlayer(),
       "img":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWTpn3XD-rgepGkLV6vNQB5ECcNwWs6t0Y0rU33VnZ_EmedfeplVxN_WsmMv3I8LZo7dY&usqp=CAU",
     },
     {
       "audi": "Sajani.mp3",
       "title": "Sajani",
+      "player": AssetsAudioPlayer(),
       "img":
           "https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20240212145840.jpg",
     },
     {
       "audi": "Tum se.mp3",
       "title": "Tum Se",
+      "player": AssetsAudioPlayer(),
       "img":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwowMcNVB_BqOKUcjjOXhvIMYn7F4nsPT8FJDdsTj1FUvePDdRNGM-HXbPnWmT7D7_yIM&usqp=CAU",
     },
     {
       "audi": "Ve Kamleya - Arijit Singh.mp3",
       "title": " Ve Kamleya",
+      "player": AssetsAudioPlayer(),
       "img": "https://i.ytimg.com/vi/xXFbFUcic_0/default.jpg",
     },
-  ];
-  static List<AssetsAudioPlayer> allau = [
-    AssetsAudioPlayer(),
-    AssetsAudioPlayer(),
   ];
 }
 

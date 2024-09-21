@@ -1,13 +1,8 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// hide BoxDecoration, BoxShadow;
 import 'package:carousel_slider/carousel_controller.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/widgets.dart';
-import 'package:media_skuza/utils/global.dart';
-import 'package:neumorphic_ui/neumorphic_ui.dart';
-// import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
+import 'package:media_skuza/utils/global.dart'; // Import the global file
 
 class AudioComponent extends StatefulWidget {
   const AudioComponent({super.key});
@@ -18,43 +13,41 @@ class AudioComponent extends StatefulWidget {
 
 class _AudioComponentState extends State<AudioComponent> {
   CarouselController carouselController = CarouselController();
-  AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
-  bool istap = false;
-  bool isplaying = false;
-  String? current;
+
   @override
   void initState() {
     super.initState();
-    assetsAudioPlayer.playlistAudioFinished.listen((e) {
-      // Handle when an audio finishes playing
-      print("Audio finished: ${e.audio.assetAudioPath}");
+    initAudio();
+  }
+
+  // Initialize audio players globally
+  initAudio() async {
+    allaudio.audio.forEach((audio) {
+      audio['player'].open(
+        Audio(
+          audio['audi'],
+          metas: Metas(
+            title: audio['title'],
+            album: audio['audi'],
+            image: MetasImage.network(audio['img']),
+          ),
+        ),
+        autoStart: false,
+        showNotification: true,
+      );
     });
   }
 
+  @override
   void dispose() {
-    assetsAudioPlayer.dispose();
+    // Dispose all players if needed (or handle it in global scope)
+    allaudio.audio.forEach((audio) {
+      audio['player'].dispose();
+    });
     super.dispose();
   }
 
-  void playaudio(String audi) async {
-    if (isplaying && current == audi) {
-      await assetsAudioPlayer.pause();
-      setState(() {
-        isplaying = false;
-      });
-    } else {
-      await assetsAudioPlayer.open(
-        Audio(audi),
-        autoStart: true,
-        showNotification: true,
-      );
-      setState(() {
-        isplaying = true;
-        current = audi;
-      });
-    }
-  }
-
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -65,30 +58,18 @@ class _AudioComponentState extends State<AudioComponent> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                NeumorphicButton(
+                IconButton(
                   onPressed: () {},
-                  style: NeumorphicStyle(
-                      color: Colors.black38,
-                      shape: NeumorphicShape.convex,
-                      boxShape: NeumorphicBoxShape.circle(),
-                      oppositeShadowLightSource: true,
-                      depth: 1.3),
                   padding: const EdgeInsets.all(8.0),
-                  child: Icon(
+                  icon: Icon(
                     Icons.arrow_back_ios,
                     color: Colors.white70,
                   ),
                 ),
-                NeumorphicButton(
+                IconButton(
                   onPressed: () {},
-                  style: NeumorphicStyle(
-                      color: Colors.black38,
-                      shape: NeumorphicShape.convex,
-                      boxShape: NeumorphicBoxShape.circle(),
-                      oppositeShadowLightSource: true,
-                      depth: 1.3),
                   padding: const EdgeInsets.all(8.0),
-                  child: Icon(
+                  icon: Icon(
                     Icons.menu,
                     color: Colors.white70,
                   ),
@@ -108,7 +89,6 @@ class _AudioComponentState extends State<AudioComponent> {
                 fit: BoxFit.cover,
                 image: AssetImage("assets/images/music3.avif"),
               ),
-              //color: Color(0xFF2F3034), // Same as the background color
               shape: BoxShape.circle,
               border: Border.all(color: Color(0xFF2F3034), width: 19),
               boxShadow: [
@@ -135,9 +115,7 @@ class _AudioComponentState extends State<AudioComponent> {
                     image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
-                            "https://static.vecteezy.com/system/resources/thumbnails/037/044/052/small_2x/ai-generated-studio-shot-of-black-headphones-over-music-note-explosion-background-with-empty-space-for-text-photo.jpg"))
-                    //  color: Colors.pink
-                    ),
+                            "https://static.vecteezy.com/system/resources/thumbnails/037/044/052/small_2x/ai-generated-studio-shot-of-black-headphones-over-music-note-explosion-background-with-empty-space-for-text-photo.jpg"))),
               ),
             ),
           ),
@@ -152,54 +130,7 @@ class _AudioComponentState extends State<AudioComponent> {
                       top: 25, bottom: 20, left: 40, right: 40),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      NeumorphicButton(
-                        onPressed: () {},
-                        style: NeumorphicStyle(
-                            color: Colors.black12,
-                            depth: 2,
-                            intensity: 0.6,
-                            lightSource: LightSource.bottomRight),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.play_arrow,
-                              color: Colors.white70,
-                            ),
-                            SizedBox(
-                              width: 15,
-                            ),
-                            Text(
-                              "Play",
-                              style: TextStyle(color: Colors.white70),
-                            )
-                          ],
-                        ),
-                      ),
-                      NeumorphicButton(
-                        onPressed: () {},
-                        style: NeumorphicStyle(
-                            color: Colors.black12,
-                            depth: 2,
-                            intensity: 0.6,
-                            lightSource: LightSource.bottomRight),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.shuffle,
-                              color: Colors.white70,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "Shuffle",
-                              style: TextStyle(color: Colors.white70),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
+                    children: [],
                   ),
                 ),
                 ...allaudio.audio
@@ -225,14 +156,13 @@ class _AudioComponentState extends State<AudioComponent> {
                                     color: Colors.black26,
                                     spreadRadius: 2,
                                     offset: Offset(4, 4),
-                                    blurRadius: 3, //inset: true,
+                                    blurRadius: 3,
                                   ),
                                   BoxShadow(
                                     color: Colors.black26,
                                     spreadRadius: 2,
                                     offset: Offset(-4, -4),
                                     blurRadius: 3,
-                                    //inset: true,
                                   )
                                 ]),
                             child: Padding(
@@ -258,29 +188,21 @@ class _AudioComponentState extends State<AudioComponent> {
                                     style: TextStyle(
                                         color: Colors.white70, fontSize: 17),
                                   ),
-                                  NeumorphicButton(
-                                    onPressed: () {
-                                      playaudio(e['audi']);
+                                  IconButton(
+                                    onPressed: () async {
+                                      // Access the global player and control it
+                                      AssetsAudioPlayer player = e['player'];
+                                      if (player.isPlaying.value) {
+                                        player.pause();
+                                      } else {
+                                        player.play();
+                                      }
                                     },
-                                    margin: EdgeInsets.all(5),
-                                    style: NeumorphicStyle(
-                                        depth: 1.5,
-                                        oppositeShadowLightSource: true,
-                                        lightSource: LightSource.bottomRight,
-                                        boxShape: NeumorphicBoxShape.circle(),
-                                        color: Colors.white12,
-                                        shape: NeumorphicShape.flat),
-                                    child: (isplaying && current == e['audi'])
-                                        ? Icon(
-                                            Icons.pause,
-                                            color: Colors.white70,
-                                            size: 12,
-                                          )
-                                        : Icon(
-                                            Icons.play_arrow,
-                                            color: Colors.white70,
-                                            size: 12,
-                                          ),
+                                    icon: Icon(
+                                      Icons.play_arrow,
+                                      color: Colors.white70,
+                                      size: 30,
+                                    ),
                                   )
                                 ],
                               ),

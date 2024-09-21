@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:media_skuza/utils/global.dart';
-import 'package:neumorphic_ui/neumorphic_ui.dart';
+
 import 'package:provider/provider.dart';
 
 import '../../provider/slider_provider.dart';
@@ -33,21 +33,21 @@ class _HomecomponentState extends State<Homecomponent> {
                     "Hello Divyanshi👋",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  NeumorphicButton(
-                    onPressed: (){
-                      Navigator.of(context).pushNamed("SearchPage");
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("Search_page");
                     },
-                    child: Icon(
+                    icon: Icon(
                       Icons.search_sharp,
                       color: Colors.white70,
                     ),
-                    style: NeumorphicStyle(
-                        color: Colors.black26,
-                        shape: NeumorphicShape.convex,
-                        boxShape: NeumorphicBoxShape.circle(),
-                        oppositeShadowLightSource: true,
-                        lightSource: LightSource.bottomRight,
-                        depth: 2),
+                    // style: NeumorphicStyle(
+                    //     color: Colors.black26,
+                    //     shape: NeumorphicShape.convex,
+                    //     boxShape: NeumorphicBoxShape.circle(),
+                    //     oppositeShadowLightSource: true,
+                    //     lightSource: LightSource.bottomRight,
+                    //     depth: 2),
                   )
                 ],
               ),
