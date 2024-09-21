@@ -27,8 +27,6 @@ assets_audio_player: ^3.0.4
 The Homepage widget is a stateful widget that contains a PageView for navigating between different components. The button state is managed to reflect the currently selected page.
 
 
-
-
 # Screen shots
 
 ![Screenshot_20240716_115421](https://github.com/user-attachments/assets/ec6b6f37-1777-4968-ac7c-8e1d8d0ffcc9)
